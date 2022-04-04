@@ -9,7 +9,7 @@ import LoopIcon from './assets/icons/loop.png';
 import PlayIcon from './assets/icons/play.png';
 import PauseIcon from './assets/icons/pause.png';
 import MenuIcon from './assets/icons/down.png';
-import {secsToTimestamp} from './util/timeFormat';
+import {secsToTimestamp} from './utils/timeFormat';
 export default function TrackPlayerScreen({
   isVisible,
   onCloseModal,
