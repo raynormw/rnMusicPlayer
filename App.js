@@ -1,23 +1,16 @@
-import React from 'react';
-import {SafeAreaView, StatusBar, Text, View} from 'react-native';
-import {React$Node} from './../TypesAndInterfaces/AppTypes';
-import TracksList from './../screens/TracksList/TracksList';
-import styles from './styles';
+import React, {useEffect} from 'react';
+import TrackListScreen from './src/screens/TrackListScreen';
+import TrackPlayer from 'react-native-track-player';
+import {musiclibrary} from './data';
 
-const App: () => React$Node = () => {
-  const {appContainer, content, header, headerTitle} = styles;
+export default function App() {
+  const setup = async () => {
+    await TrackPlayer.setupPlayer({});
+    await TrackPlayer.add(musiclibrary);
+  };
 
-  return (
-    <SafeAreaView style={appContainer}>
-      <StatusBar backgroundColor={'#35427e'} />
-      <View style={header}>
-        <Text style={headerTitle}>Audio Player</Text>
-      </View>
-      <View style={content}>
-        <TracksList />
-      </View>
-    </SafeAreaView>
-  );
-};
-
-export default App;
+  useEffect(() => {
+    setup();
+  }, []);
+  return <TrackListScreen />;
+}
