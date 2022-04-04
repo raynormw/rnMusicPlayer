@@ -84,7 +84,7 @@ export default function TrackPlayerScreen({
           </Text>
         </View>
         <View style={styles.timeStampHolder}>
-          <View/>
+          <View />
           <Pressable onPress={onPressPrev}>
             <Image style={styles.iconWidth} source={PrevIcon} />
           </Pressable>
@@ -133,8 +133,6 @@ const styles = StyleSheet.create({
     color: '#fff',
     opacity: 0.8,
     marginHorizontal: 20,
-    // marginBottom: 12,
-    // marginTop: 1,
   },
   linearGradient: {
     width: '100%',
